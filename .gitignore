@@ -1,0 +1,191 @@
+# Gradle files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build.gradle
+!**/src/test/**/build.gradle
+
+# Gradle Wrapper
+gradle/wrapper/gradle-wrapper.properties
+gradle/wrapper/gradle-wrapper.jar
+
+# Log files
+*.log
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+*.idea/
+
+# Eclipse
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# STS
+.apt_generated/
+.springBeans/
+.springProject/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# Spring Boot specific
+spring-boot-devtools.properties
+spring-boot-devtools.yml
+
+# Logs
+logs/
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Node.js
+node_modules/
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Misc
+*.class
+*.swp
+*.swo
+*~
+*.tmp
+*.bak
+*.old
+*.orig
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Database
+*.sqlite3
+*.db
+
+# Virtualenv
+venv/
+ENV/
+env.bak/
+env/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Thumbnails
+._*
+Thumbs.db
+ehthumbs.db
+
+# Windows
+Desktop.ini
+$RECYCLE.BIN/
+
+# JetBrains
+*.iml
+.idea/
+*.ipr
+*.iws
+*.editorconfig
+*.gradle
+.idea/*
+.idea/libraries
+.idea/caches
+.idea/modules.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jarRepositories.xml
+
+# Eclipse
+.metadata
+bin/**
+*.bak
+*.swp
+*.d
+*.swo
+*.su
+*.swi
+*.so
+*.swd
+*.jsd
+
+# STS
+.springBeans
+spring-boot-devtools.properties
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Compiled classes
+*.class
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+*.editorconfig
+.vscode/
+*.pydevproject
+.project
+.metadata
+*.bak
+*.swp
+*~
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+*.orig
+
+# Docker
+**/docker-compose.override.yml
+.docker/
+
+# Custom Paths For Exclusion
+!src/main/resources/application*.yml
+!src/main/resources/application*.properties
+!gradle/wrapper/gradle-wrapper.properties
+!gradle/wrapper/gradle-wrapper.jar

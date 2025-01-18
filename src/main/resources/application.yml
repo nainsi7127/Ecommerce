@@ -1,0 +1,118 @@
+# application.yml
+
+server:
+  port: 8095
+spring:
+  application:
+    name: sc-compliance-ops-ms
+
+  datasource:
+    url: jdbc:mariadb://localhost:3306/ecommerce  # Replace with your MariaDB URL and database name
+    driverClassName: org.mariadb.jdbc.Driver
+    username: root  # Replace with your MariaDB username
+    password: root  # Replace with your MariaDB password
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    format_sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+  data:
+    redis:
+      host: 163.172.77.137
+      port: 26379
+      password: G$MS&Vx4A9e^xucD
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+      timeout: 60000
+
+
+
+# App Custom Configuration
+app:
+  # For Managing Security Filter Config
+  security-config:
+    cors:
+      allowed-origins:
+        - "http://localhost:4200"
+        - "https://anotherdomain.com"
+      allowed-methods:
+        - "GET"
+        - "POST"
+        - "PUT"
+        - "DELETE"
+      allowed-headers:
+        - "Authorization"
+        - "Content-Type"
+        - "X-Requested-With"
+      allow-credentials: true
+    permitted-endpoints:
+      - "v3/api-docs/**"
+      - "/swagger-resources/**"
+      - "/swagger-ui/**"
+      - "/swagger-ui.html"
+      - "/webjars/**"
+    endpoints:
+      - path: "/api/samples/**"
+        method: "GET"
+        roles:
+          - "ROLE_USER"
+          - "ROLE_ADMIN"
+      - path: "/api/samples/**"
+        method: "POST"
+        roles:
+          - "ROLE_ADMIN"
+      - path: "/api/samples/**"
+        method: "PUT"
+        roles:
+          - "ROLE_ADMIN"
+      - path: "/api/samples/**"
+        method: "DELETE"
+        roles:
+          - "ROLE_ADMIN"
+
+  # For Configuring Cache Manager Config
+  cacheConfig:
+    managers:
+      - name: sampleCacheManager
+        type: REDIS
+        cacheNames:
+          - sampleEntities
+        redis:
+          serializers:
+            - type: JSON
+              name: sampleEntity
+          cacheNullValues: false
+          timeToLive: 36000
+          keyPrefix: "sa-app-config-ms::"
+
+      - name: redisCacheManager2
+        type: REDIS
+        cacheNames:
+          - userEntities
+          - productEntities
+        redis:
+          serializers:
+            - type: JSON
+              name: userEntity
+            - type: JSON
+              name: productEntity
+          cacheNullValues: true
+          timeToLive: 1800
+          keyPrefix: my-app
+
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    com.example: DEBUG

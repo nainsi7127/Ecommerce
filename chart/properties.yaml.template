@@ -1,0 +1,39 @@
+global:
+  configuration:
+    sc_compliance_ops_ms:
+      properties:
+      - name: sc-compliance-ops-ms
+        filename: application.properties
+        data:
+          spring.application.name: 'sc-compliance-ops-ms'
+          spring.main.allow-circular-references: 'true'
+          server.port: '8084'
+          server.servlet.context-path:  'TODO'
+          management.server.port: '9999'
+          spring.jpa.hibernate.ddl-auto: 'TODO'
+          spring.jpa.hibernate.naming.physical-strategy: 'TODO'
+          spring.jpa.properties.hibernate.dialect: 'TODO'
+          spring.datasource.url: 'TODO'
+          spring.datasource.driver-class-name: 'TODO'
+          spring.datasource.username: 'TODO'
+          spring.datasource.hikari.maximum-pool-size: 'TODO'
+          spring.datasource.hikari.min-idle: 'TODO'
+          spring.data.redis.host: 'TODO'
+          spring.data.redis.port: 'TODO'
+          spring.data.redis.lettuce.pool.max-active: 'TODO'
+          spring.data.redis.lettuce.pool.max-idle: 'TODO'
+          spring.data.redis.lettuce.pool.min-idle: 'TODO'
+          app.security-config.cors.allowed-origins: 'TODO'
+          app.security-config.cors.allowed-methods: 'TODO'
+          app.security-config.cors.allowed-headers: 'TODO'
+          spring.security.oauth2.resourceserver.jwt.issuer-uri : 'TODO'
+
+      envVariables:
+      - name: sc-compliance-ops-ms
+        data:
+          JAVA_OPTS: '-Xmx1024m'
+      secrets:
+      - name: sc-compliance-ops-ms
+        data:
+          SPRING_DATASOURCE_PASSWORD: 'TODO'
+          SPRING_DATA_REDIS_PASSWORD: 'TODO'

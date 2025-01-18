@@ -1,0 +1,46 @@
+4 types************************************
+GenerationType.AUTO
+It is the default strategy in many cases and is suitable when you want the database to manage key generation.
+GenerationType.IDENTITY  = Autoincrement
+Not good for JDBC batch operations
+
+GenerationType.SEQUENCE  = uses a database sequence to generate unique values
+Requires addiltional select statemnets to get the next value from
+a database sequence but this has no performance impact on most applications
+
+If we dont provide Sequence generator then hibernate itself will generate
+allocationSize default is 50
+
+GenerationType.TABLE
+simulates a sequence by storing and updating its current valuein
+a database table which requires the use of pessimistic locks
+which put all transactions into a sequential order
+
+This slows down application
+
+The TABLE strategy uses a special database table to generate unique keys. This approach is often used for databases that don't support sequences or auto-increment columns. It simulates the sequence behavior by using a table to store and manage the key values.
+
+Rules to create query methods -***********************
+findBy, readBy, countBy, getBy, queryby
+
+Limit the number of results*************************
+
+findFirstByName, readFirst2ByName, findTop10ByName
+
+Distinct results*********************************
+findDistinctByName or findNameDistinctBy
+
+AND and OR**************************
+
+CASCADETYPES********************
+PERSIST, MERGE, REFRESH,REMOVE, DETACH, ALL
+
+@OneToMany - extra sql will be executed
+              to upadate foreign keys - LAZY(default),
+@OneToMany(bidirectional) - extra sql wont be executed
+ to upadate foreign keys- LAZY(default),
+@ManyToOne - EAGER(default),
+@OneToOne - EAGER(default)
+@ManyToMany - LAZY(default)
+
+Default fetch type is EAGER

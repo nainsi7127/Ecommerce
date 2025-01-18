@@ -1,0 +1,4 @@
+name: sc-compliance-ops-ms
+image:
+  repository: sitaonair.azurecr.io/sc-compliance-ops-ms
+  tag: 1.0.0
